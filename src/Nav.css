@@ -1,0 +1,38 @@
+.borderr1 {
+	
+border-bottom: none;
+}
+.borderr2 {
+	border-bottom: none;
+
+}
+
+.main-nav{
+
+     display: flex;
+     list-style: none;
+     margin:0;
+
+}
+
+.Push{
+	margin-left:auto;
+
+}
+@media only screen and(max-width: 600px){
+
+ .main-nav {
+
+ 	font-size: 0.5em;
+ 	padding:0;
+
+ }
+
+}
+.search{
+	display: flex;
+  
+	align-items: center;
+	align-content: center;
+
+}
