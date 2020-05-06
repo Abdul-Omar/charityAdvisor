@@ -29,10 +29,9 @@ border-bottom: none;
  }
 
 }
-.search{
+.search, .buttonn{
 	display: flex;
   
-	align-items: center;
-	align-content: center;
+	justify-content: center;
 
 }
