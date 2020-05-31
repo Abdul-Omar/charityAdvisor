@@ -2,6 +2,9 @@ import React, { Component } from 'react';
 import '../Nav.css';
 
 
+
+
+
 const url = new URL('https://cors-anywhere.herokuapp.com/https://api.data.charitynavigator.org/v2/Organizations');
 
 class SearchBar extends React.Component {
@@ -9,7 +12,7 @@ class SearchBar extends React.Component {
   constructor(props) {
 	    super(props);
 	    this.state = {
-	      data: []
+	      list: {}
 	    }
     }
     
@@ -19,17 +22,24 @@ class SearchBar extends React.Component {
 			//var params = [['lat', '35.696233'], ['long', '139.570431']]
 
 			url.search = new URLSearchParams(params).toString();
-	    fetch(url)
-	      .then(response => response.json())
-	      .then(data => {
+		    fetch(url)
+		      .then(response => response.json())
+		      .then(data => {
 
-	      	for(var element in data){
+		      	this.setState({
 
-	      		if(element.charityName == "Religious Science Church Center of San Diego" ) 
-	      			  console.log("hello");
-	      	}
-	      
-	      })
+		      		list:data
+		      	})
+		      	
+		      	console.log(data);
+
+		      	//for(var element in data){
+
+		      		//if(element.charityName == "Religious Science Church Center of San Diego" ) 
+		      			 // console.log(element);
+		      	//}
+		      
+		      })
   }
 	
 	render(){

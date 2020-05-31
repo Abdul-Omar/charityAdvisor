@@ -9,18 +9,7 @@ import './Slide.css';
 
 
 const initialState = {
-  input: '',
-  imageUrl: '',
-  box: {},
-  route: 'signin',
-  isSignedIn: false,
-  user: {
-    id: '',
-    name: '',
-    email: '',
-    entries: 0,
-    joined: ''
-  }
+  input: ''
 }
 
 class App extends Component {
@@ -32,14 +21,12 @@ class App extends Component {
    onRouteChange = (route) => {
     if (route === 'signout') {
       this.setState(initialState)
-    } else if (route === 'home') {
-      this.setState({isSignedIn: true})
-    }
+    } 
     this.setState({route: route});
   }
 
   render() {
-    const { isSignedIn, imageUrl, route, box } = this.state;
+   
     return (
 
         <div>
@@ -54,8 +41,10 @@ class App extends Component {
                   charities nearby who could 
                   distribute this food to deserving people!
               </h3>
+
           </div>
           <div className="center">
+          
               <SearchBar> </SearchBar>
           </div>
           <div> <SlideShow/> </div>
