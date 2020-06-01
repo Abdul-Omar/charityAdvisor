@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import '../Nav.css';
+import 'tachyons';
 
 
 
@@ -12,14 +13,43 @@ class SearchBar extends React.Component {
   constructor(props) {
 	    super(props);
 	    this.state = {
-	      list: {}
+	       criteria: 'zip',
+	       value:""
 	    }
-    }
-    
-    onSubmitSearch = () => {
 
-    	    var params = {app_id: 'b8cb661c', app_key: 'b55d0a5d26c6fad893f91244e7229e4b', zip:"92105"} // or:
-			//var params = [['lat', '35.696233'], ['long', '139.570431']]
+	    this.handleChange = this.handleChange.bind(this);
+	    this.handleInput = this.handleInput.bind(this);
+    }
+
+   handleChange = (event) =>
+      this.setState({criteria: event.target.value});
+   handleInput = (event) =>
+      this.setState({value: event.target.value});
+    
+    onSubmitSearch = (event) => {
+
+    	     let filter="";
+
+    	    const {criteria, value} = this.state; 
+    	    let params;
+
+    	    if(criteria === "zip"){
+
+    	    	filter = "zip";
+
+    	    	 params = {app_id: 'b8cb661c', app_key: 'b55d0a5d26c6fad893f91244e7229e4b', zip:value}
+    	    }else if( criteria === "city"){
+
+    	    	  filter = "city";
+
+    	    	 params = {app_id: 'b8cb661c', app_key: 'b55d0a5d26c6fad893f91244e7229e4b', city:value}
+    	    }
+    	    else{
+    	    	filter = "name";
+
+    	    	params = {app_id: 'b8cb661c', app_key: 'b55d0a5d26c6fad893f91244e7229e4b', name:value}
+    	    }
+
 
 			url.search = new URLSearchParams(params).toString();
 		    fetch(url)
@@ -33,23 +63,26 @@ class SearchBar extends React.Component {
 		      	
 		      	console.log(data);
 
-		      	//for(var element in data){
-
-		      		//if(element.charityName == "Religious Science Church Center of San Diego" ) 
-		      			 // console.log(element);
-		      	//}
-		      
 		      })
   }
 	
 	render(){
 		return (
-			<div>
-				<form className=" flex search pt5 black-80 ">
+			     <div className= "flex center">
+					<form className="flex-column center search pt5 black-80">
+					<div> 
+				        <label>
+				         Search charity by:   
+				          <select  className="center fw6 w-300" criteria={this.state.criteria} onChange={this.handleChange}>
+				            <option value="zip">Zip Code</option>
+				            <option value="city">City</option>
+				            <option value="name">Name</option>
+				          </select>
+				        </label>
+			        </div>
 				  <div className="measure">
-				    <label for="name" class="f6 b db mb2">Search Charities Nearby. Input Your Zip Code <span class="normal black-60"></span></label>
-				    <input id="name" class="input-reset ba b--black-20 pa2 pl4 mb2 db w-300" type="text"/>
-				    <a  onClick={this.onSubmitSearch} className="buttonn w-70 f6 grow no-underline br-pill ph3 pv2 mb2 dib white bg-dark-green" href="#0">Go!</a>
+				    <input value={this.state.value} onChange={this.handleInput} id="name" className="input-reset ba b--black-20 pa2 pl4 mb2 " type="text"/>
+				    <a  onClick= {this.onSubmitSearch} className="buttonn w-70 f6 grow no-underline br-pill ph3 pv2 mb2 dib white bg-dark-green" href="#0">Go!</a>
 				  </div>
 				</form>
 			</div>
