@@ -13,12 +13,12 @@ class charityList extends React.Component {
     }
     
 	
-	render(){
+     render(){
 		return (
-				  <div className="charityList">
-          				<span className="charityListText">&#x3C;charityList /&#x3E;</span>
+		         <div className="charityList">
+          			<span className="charityListText">&#x3C;charityList /&#x3E;</span>
          		 </div>
 		);
-	}
+     }
 }
 export default charityList;
