@@ -14,7 +14,9 @@ class SearchBar extends React.Component {
 	    super(props);
 	    this.state = {
 	       criteria: 'zip',
-	       value:""
+	       value:"",
+	       charityList: []
+
 	    }
 
 	    this.handleChange = this.handleChange.bind(this);
@@ -28,43 +30,43 @@ class SearchBar extends React.Component {
     
     onSubmitSearch = (event) => {
 
-    	     let filter="";
+	     let filter="";
 
-    	    const {criteria, value} = this.state; 
-    	    let params;
+	    const {criteria, value} = this.state; 
+	    let params;
 
-    	    if(criteria === "zip"){
+	    if(criteria === "zip"){
 
-    	    	filter = "zip";
+	    	filter = "zip";
 
-    	    	 params = {app_id: 'b8cb661c', app_key: 'b55d0a5d26c6fad893f91244e7229e4b', zip:value}
-    	    }else if( criteria === "city"){
+	    	 params = {app_id: 'b8cb661c', app_key: 'b55d0a5d26c6fad893f91244e7229e4b', zip:value}
+	    }else if( criteria === "city"){
 
-    	    	  filter = "city";
+	    	  filter = "city";
 
-    	    	 params = {app_id: 'b8cb661c', app_key: 'b55d0a5d26c6fad893f91244e7229e4b', city:value}
-    	    }
-    	    else{
-    	    	filter = "name";
+	    	 params = {app_id: 'b8cb661c', app_key: 'b55d0a5d26c6fad893f91244e7229e4b', city:value}
+	    }
+	    else{
+	    	filter = "name";
 
-    	    	params = {app_id: 'b8cb661c', app_key: 'b55d0a5d26c6fad893f91244e7229e4b', name:value}
-    	    }
+	    	params = {app_id: 'b8cb661c', app_key: 'b55d0a5d26c6fad893f91244e7229e4b', name:value}
+	    }
 
 
-			url.search = new URLSearchParams(params).toString();
-		    fetch(url)
-		      .then(response => response.json())
-		      .then(data => {
+		url.search = new URLSearchParams(params).toString();
+	    fetch(url)
+	      .then(response => response.json())
+	      .then(data => {
 
-		      	this.setState({
+	      	this.setState({
 
-		      		list:data
-		      	})
-		      	
-		      	console.log(data);
+	      		list:data
+	      	})
+	      	
+	      	console.log(data);
 
-		      })
-  }
+	      })
+    }
 	
 	render(){
 		return (
