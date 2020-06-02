@@ -1,19 +1,19 @@
 {
   "files": {
-    "main.css": "/charityAdvisor/static/css/main.9829d7ba.chunk.css",
-    "main.js": "/charityAdvisor/static/js/main.46e5dc44.chunk.js",
-    "main.js.map": "/charityAdvisor/static/js/main.46e5dc44.chunk.js.map",
+    "main.css": "/charityAdvisor/static/css/main.6008f60f.chunk.css",
+    "main.js": "/charityAdvisor/static/js/main.cf6f959d.chunk.js",
+    "main.js.map": "/charityAdvisor/static/js/main.cf6f959d.chunk.js.map",
     "runtime-main.js": "/charityAdvisor/static/js/runtime-main.30bf401e.js",
     "runtime-main.js.map": "/charityAdvisor/static/js/runtime-main.30bf401e.js.map",
     "static/css/2.dcd209ce.chunk.css": "/charityAdvisor/static/css/2.dcd209ce.chunk.css",
-    "static/js/2.4282eb8f.chunk.js": "/charityAdvisor/static/js/2.4282eb8f.chunk.js",
-    "static/js/2.4282eb8f.chunk.js.map": "/charityAdvisor/static/js/2.4282eb8f.chunk.js.map",
+    "static/js/2.2eb41c44.chunk.js": "/charityAdvisor/static/js/2.2eb41c44.chunk.js",
+    "static/js/2.2eb41c44.chunk.js.map": "/charityAdvisor/static/js/2.2eb41c44.chunk.js.map",
     "index.html": "/charityAdvisor/index.html",
-    "precache-manifest.b93fe45d6994515a06f191f080da2a49.js": "/charityAdvisor/precache-manifest.b93fe45d6994515a06f191f080da2a49.js",
+    "precache-manifest.10d5d2b051de36c5d826da2e2fa9f812.js": "/charityAdvisor/precache-manifest.10d5d2b051de36c5d826da2e2fa9f812.js",
     "service-worker.js": "/charityAdvisor/service-worker.js",
     "static/css/2.dcd209ce.chunk.css.map": "/charityAdvisor/static/css/2.dcd209ce.chunk.css.map",
-    "static/css/main.9829d7ba.chunk.css.map": "/charityAdvisor/static/css/main.9829d7ba.chunk.css.map",
-    "static/js/2.4282eb8f.chunk.js.LICENSE.txt": "/charityAdvisor/static/js/2.4282eb8f.chunk.js.LICENSE.txt",
+    "static/css/main.6008f60f.chunk.css.map": "/charityAdvisor/static/css/main.6008f60f.chunk.css.map",
+    "static/js/2.2eb41c44.chunk.js.LICENSE.txt": "/charityAdvisor/static/js/2.2eb41c44.chunk.js.LICENSE.txt",
     "static/media/background.jpeg": "/charityAdvisor/static/media/background.0d34e806.jpeg",
     "static/media/background2.jpg": "/charityAdvisor/static/media/background2.e3893f9b.jpg",
     "static/media/background4.jpg": "/charityAdvisor/static/media/background4.1febad35.jpg",
@@ -22,8 +22,8 @@
   "entrypoints": [
     "static/js/runtime-main.30bf401e.js",
     "static/css/2.dcd209ce.chunk.css",
-    "static/js/2.4282eb8f.chunk.js",
-    "static/css/main.9829d7ba.chunk.css",
-    "static/js/main.46e5dc44.chunk.js"
+    "static/js/2.2eb41c44.chunk.js",
+    "static/css/main.6008f60f.chunk.css",
+    "static/js/main.cf6f959d.chunk.js"
   ]
 }

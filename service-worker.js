@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js");
 
 importScripts(
-  "/charityAdvisor/precache-manifest.b93fe45d6994515a06f191f080da2a49.js"
+  "/charityAdvisor/precache-manifest.10d5d2b051de36c5d826da2e2fa9f812.js"
 );
 
 self.addEventListener('message', (event) => {
