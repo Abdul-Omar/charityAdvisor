@@ -21,13 +21,22 @@ class SearchBar extends React.Component {
 
 	    this.handleChange = this.handleChange.bind(this);
 	    this.handleInput = this.handleInput.bind(this);
+	    this.sendDataToParent = this.sendDataToParent.bind(this);
     }
+
 
    handleChange = (event) =>
       this.setState({criteria: event.target.value});
    handleInput = (event) =>
       this.setState({value: event.target.value});
-    
+   
+   sendDataToParent = ()=> {
+
+   		//e.preventDefault();
+   		this.props.getData(this.state.charityList);
+   		//console.log(data);
+
+   }
     onSubmitSearch = (event) => {
 
 	     let filter="";
@@ -60,10 +69,12 @@ class SearchBar extends React.Component {
 
 	      	this.setState({
 
-	      		list:data
+	      		charityList:data
 	      	})
 	      	
-	      	console.log(data);
+	      	//console.log(this.state.charityList.length);
+
+	      	this.sendDataToParent();
 
 	      })
     }
@@ -84,7 +95,7 @@ class SearchBar extends React.Component {
 			        </div>
 				  <div className="measure">
 				    <input value={this.state.value} onChange={this.handleInput} id="name" className="input-reset ba b--black-20 pa2 pl4 mb2 " type="text"/>
-				    <a  onClick= {this.onSubmitSearch} className="buttonn w-70 f6 grow no-underline br-pill ph3 pv2 mb2 dib white bg-dark-green" href="#0">Go!</a>
+				    <a  onClick= {this.onSubmitSearch} className=" center buttonn w-70 f6 grow no-underline br-pill ph3 pv2 mb2 dib white bg-dark-green w-300" href="#0">Go!</a>
 				  </div>
 				</form>
 			</div>

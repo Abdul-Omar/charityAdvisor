@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import Navbar from './components/Navbar'
 import SearchBar from './components/SearchBar'
 import SlideShow from './components/SlideShow'
+import CharityList from './components/CharityList'
 import './App.css';
 import './Nav.css'
 import './Slide.css';
@@ -9,13 +10,17 @@ import './Slide.css';
 
 
 const initialState = {
-  input: ''
+  input: '',
+  hideSlideShow: false,
+  list:[]
 }
 
 class App extends Component {
   constructor() {
     super();
     this.state = initialState;
+
+    this.getDataFromSearchBar = this.getDataFromSearchBar.bind(this);
   }
 
    onRouteChange = (route) => {
@@ -23,10 +28,19 @@ class App extends Component {
       this.setState(initialState)
     } 
     this.setState({route: route});
+
+  }
+
+   getDataFromSearchBar = (data, hideSlideShow) => {
+       
+       this.setState({list:data, hideSlideShow:true});
+
+       //console.log(this.state.list);
+
   }
 
   render() {
-   
+      const hideSlideShow = this.state;
     return (
 
         <div>
@@ -44,10 +58,16 @@ class App extends Component {
 
           </div>
           <div className="center">
+    
+              <div>
+              <SearchBar getData={this.getDataFromSearchBar}/>
           
-              <SearchBar> </SearchBar>
+              <CharityList data={this.state.list} />
+                    <SlideShow/>
+              </div>
+        
+
           </div>
-          <div> <SlideShow/> </div>
         </div>
 
         

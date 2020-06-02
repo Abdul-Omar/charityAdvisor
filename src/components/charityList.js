@@ -1,24 +1,34 @@
 import React, { Component } from 'react';
 import '../Nav.css';
-
-import React, { Component } from 'react';
 import './charityList.css';
-class charityList extends React.Component {
+import Charity from './Charity'
 
-  constructor(props) {
-	    super(props);
-	    this.state = {
-	      list: {}
-	    }
-    }
-    
-	
+var list = [];
+class CharityList extends React.Component {
+
+   
+
      render(){
+
+     	let  list = this.props.data;
+
+     	//console.log(this.props.data);
 		return (
-		         <div className="charityList">
-          			<span className="charityListText">&#x3C;charityList /&#x3E;</span>
+			    <div>
+		         <div className="  ba b--dark-green charityList">
+          			<span className="charityListText">&#x3C;CharityList /&#x3E;</span>
+          			 <div>
+          				{list.map((charity, index) => 
+
+          					<ul> 
+	          					<li key={index}> {charity.charityName} </li> 
+          					</ul>
+          				)}
+          			</div>
          		 </div>
+
+         		</div>
 		);
      }
 }
-export default charityList;
+export default CharityList;

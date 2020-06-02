@@ -1,18 +1,21 @@
+import React, { Component } from 'react';
 
 class Charity extends React.Component {
 	
   render() {
+
+      const data  = this.props.data;
+
  
   	return (
 
-          const {charity}  = this.props;
-    	<div className="company">
+    	<div className="charity">
         <span className="charityText">&#x3C;Charity/&#x3E;</span>
-    	  <img src={p.avatar_url} />
         <div className="companyinfo">
-          <div>Name: {charity.name}</div>
-          <div>Email: {charity.email}</div>
-          <div>Bio: {charity.address}</div>
+          <div>Name: {data.charityName}</div>
+          <div>Email: {data.email}</div>
+          <div>Address: {data.mailingAddress}</div>
+          <div>mission: {data.mission}</div>
         </div>
     	</div>
     );
