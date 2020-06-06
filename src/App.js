@@ -11,6 +11,7 @@ import './Slide.css';
 
 const initialState = {
   input: '',
+  route:'',
   hideSlideShow: false,
   list:[]
 }
@@ -24,9 +25,7 @@ class App extends Component {
   }
 
    onRouteChange = (route) => {
-    if (route === 'signout') {
-      this.setState(initialState)
-    } 
+    
     this.setState({route: route});
 
   }

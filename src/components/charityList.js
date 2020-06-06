@@ -21,7 +21,7 @@ class CharityList extends React.Component {
           				{list.map((charity, index) => 
 
           					<ul> 
-	          					<li key={index}> {charity.charityName} </li> 
+	          					<li key={index}> {charity.charityName}</li> 
           					</ul>
           				)}
           			</div>

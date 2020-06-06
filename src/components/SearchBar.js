@@ -58,7 +58,7 @@ class SearchBar extends React.Component {
 	    else{
 	    	filter = "name";
 
-	    	params = {app_id: 'b8cb661c', app_key: 'b55d0a5d26c6fad893f91244e7229e4b', name:value}
+	    	params = {app_id: 'b8cb661c', app_key: 'b55d0a5d26c6fad893f91244e7229e4b', search:value}
 	    }
 
 
