@@ -55,7 +55,7 @@ class App extends Component {
 
               {route === "Home"? 
               <div className="flex"> 
-                <div className="ml7 mt7 w-20">
+                <div className="center mt7 w-30 pa0">
                    <h1 className="light-red dark-green orange fw6">  Let's fight food waste together and help those in need in the process.</h1>
                   <h3 className="light-red fw3 dark-green orange">
                       Every day, thousands of pounds of perfectly good food 
@@ -67,10 +67,10 @@ class App extends Component {
                       distribute this food to deserving people!
                   </h3>
 
-                  <button className="link  grow  w-25 white f6 pointer dim bg-dark-green br-pill"  onClick={() => this.onRouteChange('Search')}  >  Let's Go! </button>
+                  <button className="link  h-20 grow  w-25 white f6 pointer dim bg-dark-green br-pill"  onClick={() => this.onRouteChange('Search')}  >  Let's Go! </button>
               </div>
 
-              <img className=" h5 ml7 mt7" src={food}/>
+              <img className=" flex h5 center mt7" src={food}/>
           </div>
           :
           <div className ="center mt7 w-300" >

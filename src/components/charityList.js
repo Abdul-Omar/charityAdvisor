@@ -16,7 +16,7 @@ class CharityList extends React.Component {
 		return (
 			    <div>
 		         <div className=" b--dark-green charityList">
-          			<span className="charityListText"> CharityList</span>
+          			<span className="charityListText"> &#x3C;Charity List/&#x3E;</span>
           			 <div>
           				{list.map((charity, index) => 
 
