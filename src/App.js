@@ -6,12 +6,12 @@ import CharityList from './components/CharityList'
 import './App.css';
 import './Nav.css'
 import './Slide.css';
-
+import food from './Images/food.svg';
 
 
 const initialState = {
   input: '',
-  route:'',
+  route:'Home',
   hideSlideShow: false,
   list:[]
 }
@@ -25,8 +25,14 @@ class App extends Component {
   }
 
    onRouteChange = (route) => {
-    
-    this.setState({route: route});
+    if( route == "Home"){
+      this.setState({route: "Home"});
+    }
+    else if( route == "Search"){
+      this.setState({route: "Search"});
+    }
+    else
+      this.setState({route: route});
 
   }
 
@@ -39,37 +45,41 @@ class App extends Component {
   }
 
   render() {
-      const hideSlideShow = this.state;
+
+           const {route} = this.state;
+ 
     return (
 
-        <div>
             <div className="App flex">
-              <Navbar> </Navbar> 
-              <h3 className="light-red dark-green orange mt5">
-                  Every day, thousands of pounds of perfectly good food 
-                  is wasted in the hotel/Restaurant industry while
-                  thousands of needy people go hungry.
-                  We want to solve this problem by
-                  giving you a chance to connect instantly with 
-                  charities nearby who could 
-                  distribute this food to deserving people!
-              </h3>
+              <Navbar onRouteChange= { this.onRouteChange}> </Navbar> 
 
-          </div>
-          <div className="center">
-    
-              <div>
-              <SearchBar getData={this.getDataFromSearchBar}/>
-          
-              <CharityList data={this.state.list} />
-                    <SlideShow/>
+              {route === "Home"? 
+              <div className="flex"> 
+                <div className="ml7 mt7 w-20">
+                   <h1 className="light-red dark-green orange fw6">  Let's fight food waste together and help those in need in the process.</h1>
+                  <h3 className="light-red fw3 dark-green orange">
+                      Every day, thousands of pounds of perfectly good food 
+                      is wasted in the hotel/Restaurant industry while
+                      thousands of needy people go hungry.
+                      We want to solve this problem by
+                      giving you a chance to connect instantly with 
+                      charities nearby who could 
+                      distribute this food to deserving people!
+                  </h3>
+
+                  <button className="link  grow  w-25 white f6 pointer dim bg-dark-green br-pill"  onClick={() => this.onRouteChange('Search')}  >  Let's Go! </button>
               </div>
-        
 
+              <img className=" h5 ml7 mt7" src={food}/>
           </div>
-        </div>
+          :
+          <div className ="center mt7 w-300" >
+             <SearchBar getData={this.getDataFromSearchBar}/>
+            <CharityList data={this.state.list}/>
+          </div>
 
-        
+      } 
+      </div>
     );
   }
 }

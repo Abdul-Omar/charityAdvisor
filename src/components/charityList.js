@@ -15,8 +15,8 @@ class CharityList extends React.Component {
      	//console.log(this.props.data);
 		return (
 			    <div>
-		         <div className="  ba b--dark-green charityList">
-          			<span className="charityListText">&#x3C;CharityList /&#x3E;</span>
+		         <div className=" b--dark-green charityList">
+          			<span className="charityListText"> CharityList</span>
           			 <div>
           				{list.map((charity, index) => 
 
