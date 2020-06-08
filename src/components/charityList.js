@@ -12,7 +12,7 @@ class CharityList extends React.Component {
 
      	let  list = this.props.data;
 
-     	//console.log(this.props.data);
+     	console.log(this.props.data[0]);
 		return (
 			    <div>
 		         <div className=" b--dark-green charityList">
@@ -20,9 +20,20 @@ class CharityList extends React.Component {
           			 <div>
           				{list.map((charity, index) => 
 
-          					<ul> 
-	          					<li key={index}> {charity.charityName}</li> 
-          					</ul>
+          					 
+	          				 <ul> 
+                        <div className=" b--dark-green">
+                        <li className= "fw6 dark-blue" key={index}> Name: {charity.charityName}</li> 
+                        <h5>Type: {charity.irsClassification.classification}</h5> 
+                        <h5> Address: {charity.mailingAddress.streetAddress1}</h5> 
+                        <h5> {charity.mailingAddress.streetAddress2} </h5>
+                        <h5> City: {charity.mailingAddress.city} </h5>
+                         <h5> State: {charity.mailingAddress.stateOrProvince} </h5>
+                        </div>
+
+
+                     </ul>
+          				
           				)}
           			</div>
          		 </div>

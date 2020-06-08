@@ -9,6 +9,7 @@
  
 .charityListText{
   position: relative;
+  border: thin-green;
   top: -47px;
   background: white;
   padding: 7px;

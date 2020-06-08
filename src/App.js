@@ -12,7 +12,6 @@ import food from './Images/food.svg';
 const initialState = {
   input: '',
   route:'Home',
-  hideSlideShow: false,
   list:[]
 }
 
@@ -38,7 +37,7 @@ class App extends Component {
 
    getDataFromSearchBar = (data, hideSlideShow) => {
        
-       this.setState({list:data, hideSlideShow:true});
+       this.setState({list:data});
 
        //console.log(this.state.list);
 
