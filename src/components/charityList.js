@@ -15,15 +15,15 @@ class CharityList extends React.Component {
      	console.log(this.props.data[0]);
 		return (
 			    <div>
-		         <div className=" b--dark-green charityList">
+		         <div className=" charityList">
           			<span className="charityListText"> &#x3C;Charity List/&#x3E;</span>
           			 <div>
           				{list.map((charity, index) => 
 
           					 
 	          				 <ul> 
-                        <div className=" b--dark-green">
-                        <li className= "fw6 dark-blue" key={index}> Name: {charity.charityName}</li> 
+                        <div className="dark-green">
+                        <li className= "fw6 white bg-dark-green" key={index}> Name: {charity.charityName}</li> 
                         <h5>Type: {charity.irsClassification.classification}</h5> 
                         <h5> Address: {charity.mailingAddress.streetAddress1}</h5> 
                         <h5> {charity.mailingAddress.streetAddress2} </h5>
