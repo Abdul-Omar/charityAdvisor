@@ -1,18 +1,18 @@
 {
   "files": {
-    "main.css": "/charityAdvisor/static/css/main.7e35894f.chunk.css",
-    "main.js": "/charityAdvisor/static/js/main.cf6819b3.chunk.js",
-    "main.js.map": "/charityAdvisor/static/js/main.cf6819b3.chunk.js.map",
+    "main.css": "/charityAdvisor/static/css/main.e8527b4d.chunk.css",
+    "main.js": "/charityAdvisor/static/js/main.c15fc2de.chunk.js",
+    "main.js.map": "/charityAdvisor/static/js/main.c15fc2de.chunk.js.map",
     "runtime-main.js": "/charityAdvisor/static/js/runtime-main.30bf401e.js",
     "runtime-main.js.map": "/charityAdvisor/static/js/runtime-main.30bf401e.js.map",
     "static/css/2.dcd209ce.chunk.css": "/charityAdvisor/static/css/2.dcd209ce.chunk.css",
     "static/js/2.9a19da97.chunk.js": "/charityAdvisor/static/js/2.9a19da97.chunk.js",
     "static/js/2.9a19da97.chunk.js.map": "/charityAdvisor/static/js/2.9a19da97.chunk.js.map",
     "index.html": "/charityAdvisor/index.html",
-    "precache-manifest.dca537da4da6bf09e30b065af6cf3b2d.js": "/charityAdvisor/precache-manifest.dca537da4da6bf09e30b065af6cf3b2d.js",
+    "precache-manifest.52afefa88c7650c28d83ad80cb302de8.js": "/charityAdvisor/precache-manifest.52afefa88c7650c28d83ad80cb302de8.js",
     "service-worker.js": "/charityAdvisor/service-worker.js",
     "static/css/2.dcd209ce.chunk.css.map": "/charityAdvisor/static/css/2.dcd209ce.chunk.css.map",
-    "static/css/main.7e35894f.chunk.css.map": "/charityAdvisor/static/css/main.7e35894f.chunk.css.map",
+    "static/css/main.e8527b4d.chunk.css.map": "/charityAdvisor/static/css/main.e8527b4d.chunk.css.map",
     "static/js/2.9a19da97.chunk.js.LICENSE.txt": "/charityAdvisor/static/js/2.9a19da97.chunk.js.LICENSE.txt",
     "static/media/background.jpeg": "/charityAdvisor/static/media/background.0d34e806.jpeg",
     "static/media/background2.jpg": "/charityAdvisor/static/media/background2.e3893f9b.jpg",
@@ -24,7 +24,7 @@
     "static/js/runtime-main.30bf401e.js",
     "static/css/2.dcd209ce.chunk.css",
     "static/js/2.9a19da97.chunk.js",
-    "static/css/main.7e35894f.chunk.css",
-    "static/js/main.cf6819b3.chunk.js"
+    "static/css/main.e8527b4d.chunk.css",
+    "static/js/main.c15fc2de.chunk.js"
   ]
 }

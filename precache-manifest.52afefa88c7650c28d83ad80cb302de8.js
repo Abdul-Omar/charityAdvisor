@@ -1,6 +1,6 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "0f500970b46b4481443dcac410400abc",
+    "revision": "cf7080aead5b9a87303a7bf2a920d1e3",
     "url": "/charityAdvisor/index.html"
   },
   {
@@ -8,8 +8,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/charityAdvisor/static/css/2.dcd209ce.chunk.css"
   },
   {
-    "revision": "07b2b12ece533c6e4372",
-    "url": "/charityAdvisor/static/css/main.7e35894f.chunk.css"
+    "revision": "6e1aded6be74843a27f8",
+    "url": "/charityAdvisor/static/css/main.e8527b4d.chunk.css"
   },
   {
     "revision": "afbc87fd9922cfc4bdaf",
@@ -20,8 +20,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/charityAdvisor/static/js/2.9a19da97.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "07b2b12ece533c6e4372",
-    "url": "/charityAdvisor/static/js/main.cf6819b3.chunk.js"
+    "revision": "6e1aded6be74843a27f8",
+    "url": "/charityAdvisor/static/js/main.c15fc2de.chunk.js"
   },
   {
     "revision": "fe83fb33069a1090bd7d",
