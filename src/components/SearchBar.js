@@ -6,16 +6,18 @@ import 'tachyons';
 
 
 
-const url = new URL('https://cors-anywhere.herokuapp.com/https://api.data.charitynavigator.org/v2/Organizations');
 
-class SearchBar extends React.Component {
+
+class SearchBar extends Component {
 
   constructor(props) {
 	    super(props);
 	    this.state = {
 	       criteria: 'zip',
 	       value:"",
-	       charityList: []
+	       charityList: [],
+	       errorOccured: false
+
 
 	    }
 
@@ -33,51 +35,21 @@ class SearchBar extends React.Component {
    sendDataToParent = ()=> {
 
    		//e.preventDefault();
-   		this.props.getData(this.state.charityList);
+   		this.props.getData(this.state.value, this.state.criteria);
    		//console.log(data);
 
    }
     onSubmitSearch = (event) => {
 
-	     let filter="";
+	     
+	      //console.log(this.state.charityList.length);
+	   		 this.sendDataToParent();
 
-	    const {criteria, value} = this.state; 
-	    let params;
+	          	  
 
-	    if(criteria === "zip"){
-
-	    	filter = "zip";
-
-	    	 params = {app_id: 'b8cb661c', app_key: 'b55d0a5d26c6fad893f91244e7229e4b', zip:value}
-	    }else if( criteria === "city"){
-
-	    	  filter = "city";
-
-	    	 params = {app_id: 'b8cb661c', app_key: 'b55d0a5d26c6fad893f91244e7229e4b', city:value}
-	    }
-	    else{
-	    	filter = "name";
-
-	    	params = {app_id: 'b8cb661c', app_key: 'b55d0a5d26c6fad893f91244e7229e4b', search:value}
-	    }
+	  }
 
 
-		url.search = new URLSearchParams(params).toString();
-	    fetch(url)
-	      .then(response => response.json())
-	      .then(data => {
-
-	      	this.setState({
-
-	      		charityList:data
-	      	})
-	      	
-	      	//console.log(this.state.charityList.length);
-
-	      	this.sendDataToParent();
-
-	      })
-    }
 	
 	render(){
 		return (

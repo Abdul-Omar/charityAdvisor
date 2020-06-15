@@ -10,9 +10,13 @@ import food from './Images/food.svg';
 
 
 const initialState = {
-  input: '',
   route:'Home',
-  list:[]
+
+  data: {
+
+    criteria:'',
+    value:''
+  }
 }
 
 class App extends Component {
@@ -24,24 +28,32 @@ class App extends Component {
   }
 
    onRouteChange = (route) => {
-    if( route == "Home"){
+    if( route === "Home"){
       this.setState({route: "Home"});
+      this.setState({ data:{
+          value:'',
+          criteria:''
+      }})
     }
-    else if( route == "Search"){
+    else if( route === "Search"){
       this.setState({route: "Search"});
+       this.setState({ data:{
+          value:'',
+          criteria:''
+      }})
     }
     else
       this.setState({route: route});
 
   }
 
-   getDataFromSearchBar = (data, hideSlideShow) => {
+   getDataFromSearchBar = (value, criteria) => {
        
-       this.setState({list:data});
+       this.setState({data: {value:value,criteria:criteria} });
 
        //console.log(this.state.list);
-
   }
+
 
   render() {
 
@@ -50,35 +62,40 @@ class App extends Component {
     return (
 
             <div className="App flex">
-              <Navbar onRouteChange= { this.onRouteChange}> </Navbar> 
+                
+                  <Navbar onRouteChange= { this.onRouteChange}> </Navbar> 
 
-              {route === "Home"? 
-                  <div className=" flex flex-wrap"> 
-                    <div className="center mt7 w-30 pa0">
-                       <h1 className="light-red dark-green orange fw6">  Let's fight food waste together and help those in need in the process.</h1>
-                      <h3 className="light-red fw3 dark-green orange">
-                          Every day, thousands of pounds of perfectly good food 
-                          is wasted in the hotel/Restaurant industry while
-                          thousands of needy people go hungry.
-                          We want to solve this problem by
-                          giving you a chance to connect instantly with 
-                          charities nearby who could 
-                          distribute this food to deserving people!
-                      </h3>
+                  { 
+                      route === "Home"? 
+                        <div className=" flex flex-wrap"> 
+                            <div className="center mt7 ml7 w-30 pa0">
+                               <h1 className="light-red dark-green orange fw6">  Let's fight food waste together and help those in need in the process.</h1>
+                              <h3 className="light-red fw3 dark-green orange">
+                                  Every day, thousands of pounds of perfectly good food 
+                                  is wasted in the hotel/Restaurant industry while
+                                  thousands of needy people go hungry.
+                                  We want to solve this problem by
+                                  giving you a chance to connect instantly with 
+                                  charities nearby who could 
+                                  distribute this food to deserving people!
+                              </h3>
 
-                      <button className="link  h-20 grow  w-20 white f6 pointer dim bg-dark-green br-pill"  onClick={() => this.onRouteChange('Search')}  >  Let's Go! </button>
-                  </div>
+                              <button className="link  h-30 grow  w-30 white f6 pointer dim bg-dark-green ba pa3"  onClick={() => this.onRouteChange('Search')}  >  Let's Go! </button>
+                          </div>
 
-                  <img className=" o-75 flex h5 center mt7" src={food}/>
-              </div>
-              :
-              <div className ="center mt7 w-300" >
-                 <SearchBar getData={this.getDataFromSearchBar}/>
-                <CharityList data={this.state.list}/>
-              </div>
+                          <img className=" o-75 flex h5 center mt7 mr5" src={food}/>
+                      </div>
+                    : (  
+                        this.state.data.value !== ''?
+                          <div className= "center mt5 w-300"> <CharityList data={this.state.data}/></div>
+                        :
 
-            } 
-        </div>
+                          <div className ="center mt7 w-300" >
+                             <SearchBar getData={this.getDataFromSearchBar}/>
+                          </div>
+                      )
+                } 
+          </div>
     );
   }
 }
