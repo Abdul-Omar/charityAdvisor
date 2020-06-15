@@ -64,7 +64,9 @@ class CharityList extends Component {
                               charityList:data
                          })
 
-                    }        
+                    }
+
+                    this.setState ({fetching:false});        
 
             })
             .catch(err=>{
@@ -74,7 +76,7 @@ class CharityList extends Component {
                
             });
 
-            this.setState ({fetching:false});
+            
       }
 
         
