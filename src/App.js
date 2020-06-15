@@ -67,7 +67,7 @@ class App extends Component {
 
                   { 
                       route === "Home"? 
-                        <div className=" flex flex-wrap"> 
+                        <div className="site-container flex flex-wrap"> 
                             <div className="center mt7 ml7 w-30 pa0">
                                <h1 className="light-red dark-green orange fw6">  Let's fight food waste together and help those in need in the process.</h1>
                               <h3 className="light-red fw3 dark-green orange">
@@ -80,7 +80,7 @@ class App extends Component {
                                   distribute this food to deserving people!
                               </h3>
 
-                              <button className="link  h-30 grow  w-30 white f6 pointer dim bg-dark-green ba pa3"  onClick={() => this.onRouteChange('Search')}  >  Let's Go! </button>
+                              <button className=" center buttonn link  h-30 grow  w-30 white f6 pointer dim bg-dark-green ba pa3"  onClick={() => this.onRouteChange('Search')}  >  Let's Go! </button>
                           </div>
 
                           <img className=" o-75 flex h5 center mt7 mr5" src={food}/>

@@ -27,5 +27,14 @@
 .App-link {
   color: #61dafb;
 }
+@media screen and (min-width: 415px){
+  .site-container {
+    flex-direction: row;
+  }
+}
+.buttonn {
+  
+  flex: 1 1 0;
+}
 
 
