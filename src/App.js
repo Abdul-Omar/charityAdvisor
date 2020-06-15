@@ -1,11 +1,9 @@
 import React, { Component } from 'react';
 import Navbar from './components/Navbar'
 import SearchBar from './components/SearchBar'
-import SlideShow from './components/SlideShow'
 import CharityList from './components/CharityList'
 import './App.css';
 import './Nav.css'
-import './Slide.css';
 import food from './Images/food.svg';
 
 
@@ -83,7 +81,7 @@ class App extends Component {
                               <button className=" center buttonn link  h-30 grow  w-30 white f6 pointer dim bg-dark-green ba pa3"  onClick={() => this.onRouteChange('Search')}  >  Let's Go! </button>
                           </div>
 
-                          <img className=" o-75 flex h5 center mt7 mr5" src={food}/>
+                          <img  alt="" className=" o-75 flex h5 center mt7 mr5" src={food}/>
                       </div>
                     : (  
                         this.state.data.value !== ''?

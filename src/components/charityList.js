@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import '../Nav.css';
 import './charityList.css';
-import Charity from './Charity'
+
 
 const url = new URL('https://cors-anywhere.herokuapp.com/https://api.data.charitynavigator.org/v2/Organizations');
 
@@ -26,9 +26,6 @@ class CharityList extends Component {
           this.setState({fetching:true})
 
           const {criteria, value} = this.props.data; 
-
-           console.log( criteria);
-           console.log(value);
           
           let params;
 
@@ -64,25 +61,20 @@ class CharityList extends Component {
 
                          this.setState({
 
+                              charityList:data
+                         })
 
-                charityList:data
-              })
-
-
-                    }
-
-             
-              
-                this.setState ({fetching:false});
+                    }        
 
             })
             .catch(err=>{
               
-              console.log("Hellooo");
 
                this.setState ({errorOccured:true});
                
             });
+
+            this.setState ({fetching:false});
       }
 
         
@@ -90,9 +82,8 @@ class CharityList extends Component {
               
      render(){
 
-     	    let  list = this.state.charityList;
-          console.log(list);
-      		return (
+     	        let  list = this.state.charityList;
+           		return (
       			    <div>
       		          <div className=" center charityList">
                   		  { 
