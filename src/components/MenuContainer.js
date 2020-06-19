@@ -11,8 +11,9 @@ const MenuContainer  =  ({onRouteChange}) => {
     return (
       
       <Menu> 
-        <a  className="menu-item white" onClick={() => onRouteChange('Home')} href="/Home">Home</a>
-         </Menu>
+        <a  className="menu-item white link pointer" onClick={() => onRouteChange('Home')}  >Home</a>
+        <a  className="menu-item white link pointer" onClick={() => onRouteChange('Search')}  >Search</a>
+      </Menu>
 
     );
 }
