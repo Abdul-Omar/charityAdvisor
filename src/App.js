@@ -1,10 +1,9 @@
 import React, { Component } from 'react';
-import Navbar from './components/Navbar'
 import SearchBar from './components/SearchBar'
 import CharityList from './components/CharityList'
 import './App.css';
-import './Nav.css'
 import food from './Images/food.svg';
+import MenuContainer from './components/MenuContainer'
 
 
 const initialState = {
@@ -23,9 +22,12 @@ class App extends Component {
     this.state = initialState;
 
     this.getDataFromSearchBar = this.getDataFromSearchBar.bind(this);
+    this.onRouteChange = this.onRouteChange.bind(this);
   }
 
    onRouteChange = (route) => {
+
+    console.log("changging route to: " + route);
     if( route === "Home"){
       this.setState({route: "Home"});
       this.setState({ data:{
@@ -43,13 +45,16 @@ class App extends Component {
     else
       this.setState({route: route});
 
+    console.log("state route is : " + this.state.route);
+
   }
 
    getDataFromSearchBar = (value, criteria) => {
        
        this.setState({data: {value:value,criteria:criteria} });
 
-       //console.log(this.state.list);
+       console.log(this.state.data.value);
+       console.log(this.state.data.criteria);
   }
 
 
@@ -60,11 +65,11 @@ class App extends Component {
     return (
 
             <div className="App flex">
-                
-                  <Navbar onRouteChange= { this.onRouteChange}> </Navbar> 
-
+                  <div>
+                   <MenuContainer onRouteChange={this.onRouteChange}/>
+                   </div>
                   { 
-                      route === "Home"? 
+                      route === "Home" ? 
                         <div className="site-container flex flex-wrap"> 
                             <div className="center mt7 ml7 w-30 pa0">
                                <h1 className="light-red dark-green orange fw6">  Let's fight food waste together and help those in need in the process.</h1>
@@ -83,15 +88,24 @@ class App extends Component {
 
                           <img  alt="" className=" o-75 flex h5 center mt7 mr5" src={food}/>
                       </div>
-                    : (  
-                        this.state.data.value !== ''?
-                          <div className= "center mt5 w-300"> <CharityList data={this.state.data}/></div>
-                        :
 
-                          <div className ="center mt7 w-300" >
-                             <SearchBar getData={this.getDataFromSearchBar}/>
-                          </div>
-                      )
+                    : (
+
+                            this.state.data.value !== ''?
+
+                              <div className= "center mt5 w-300">
+                                 {console.log( "value is of input is :" + this.state.value)}
+                                   {console.log("CharityList")}
+
+                               <CharityList data={this.state.data}/>
+                               </div>
+                            :
+
+                              
+                              <SearchBar getData={this.getDataFromSearchBar}/>
+                              
+                         
+                     )
                 } 
           </div>
     );

@@ -1,19 +1,12 @@
 import React, { Component } from 'react';
 import '../Nav.css';
 import 'tachyons';
-
-
-
-
-
-
-
 class SearchBar extends Component {
 
   constructor(props) {
 	    super(props);
 	    this.state = {
-	       criteria: 'zip',
+	       criteria:'zip',
 	       value:"",
 	       charityList: [],
 	       errorOccured: false
@@ -24,6 +17,7 @@ class SearchBar extends Component {
 	    this.handleChange = this.handleChange.bind(this);
 	    this.handleInput = this.handleInput.bind(this);
 	    this.sendDataToParent = this.sendDataToParent.bind(this);
+	    this.onSubmitSearch = this.onSubmitSearch.bind(this);
     }
 
 
@@ -36,19 +30,18 @@ class SearchBar extends Component {
 
    		//e.preventDefault();
    		this.props.getData(this.state.value, this.state.criteria);
-   		//console.log(data);
+
 
    }
     onSubmitSearch = (event) => {
 
-	     
-	      //console.log(this.state.charityList.length);
+	
 	   		 this.sendDataToParent();
 
-	          	  
+	   		 console.log(this.state.value);
+   		     console.log(this.state.critera);          	  
 
 	  }
-
 
 	
 	render(){
@@ -65,9 +58,9 @@ class SearchBar extends Component {
 				          </select>
 				        </label>
 			        </div>
-				  <div className="measure">
-				    <input value={this.state.value} onChange={this.handleInput} id="name" className="input-reset ba b--black-20 pa2 pl4 mb2 " type="text"/>
-				    <a  onClick= {this.onSubmitSearch} className=" center buttonn w-70 f6 grow no-underline br-pill ph3 pv2 mb2 dib white bg-dark-green w-300" href="#0">Go!</a>
+				  <div className = "measure">
+				    <input value = {this.state.value} onChange={this.handleInput} id="name" className="input-reset ba b--black-20 pa2 pl4 mb2 " type="text"/>
+				    <a  onClick  = {this.onSubmitSearch} className=" center buttonn w-70 f6 grow no-underline br-pill ph3 pv2 mb2 dib white bg-dark-green w-300" href="#0">Go!</a>
 				  </div>
 				</form>
 			</div>

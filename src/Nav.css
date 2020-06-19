@@ -35,3 +35,9 @@ border-bottom: none;
 	justify-content: center;
 
 }
+.icon {
+  width: 35px;
+  height: 5px;
+  background-color: black;
+  margin: 6px 0;
+}

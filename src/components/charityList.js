@@ -29,6 +29,9 @@ class CharityList extends Component {
           
           let params;
 
+          console.log( criteria);
+          console.log(value);
+
           if(criteria === "zip"){
 
 
