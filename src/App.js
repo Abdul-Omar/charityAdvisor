@@ -102,7 +102,7 @@ class App extends Component {
                             :
 
                               
-                              <SearchBar className="center mt5" getData={this.getDataFromSearchBar}/>
+                              <SearchBar className="center mt7" getData={this.getDataFromSearchBar}/>
                               
                          
                      )

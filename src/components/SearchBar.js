@@ -59,7 +59,7 @@ class SearchBar extends Component {
 				        </label>
 			        </div>
 				  <div className = "measure">
-				    <input value = {this.state.value} onChange={this.handleInput} id="name" className="input-reset ba b--black-20 pa2 pl4 mb2 " type="text"/>
+				    <input value = {this.state.value} onChange={this.handleInput} id="name" className="input-reset ba b--black-20 pa2 pl4 mb2 " type="text" placeholder="..search"/>
 				    <a  onClick  = {this.onSubmitSearch} className=" center buttonn w-70 f6 grow no-underline br-pill ph3 pv2 mb2 dib white bg-dark-green w-300" href="#0">Go!</a>
 				  </div>
 				</form>
